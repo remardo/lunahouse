@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дом под Луной — уютный дом для отдыха</title>
+<meta name="description" content="Стильный 2-этажный дом 126 м² в тихом районе. До 10 гостей, терраса, полностью укомплектованная кухня. Бронируйте островок тишины и вдохновения.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;350;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1c3a13;
+  --lime:#d3fa99;
+  --parchment:#fcfcf7;
+  --stone:#eeeee9;
+  --sage:#c4c7c4;
+  --gray:#b3b3b3;
+  --sans:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --maxw:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--parchment);
+  color:var(--forest);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.4;
+  letter-spacing:-0.4px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 48px}
+
+/* announcement */
+.announce{
+  background:var(--lime);
+  color:var(--forest);
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:-0.42px;
+  padding:7px 16px;
+}
+
+/* nav */
+.navwrap{position:sticky;top:0;z-index:50;padding:20px 48px 0;backdrop-filter:blur(2px)}
+.nav{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--parchment);
+  border:1px solid var(--forest);
+  border-radius:9999px;
+  padding:10px 12px 10px 24px;
+}
+.brand{display:flex;align-items:center;gap:8px;font-weight:500;font-size:18px;letter-spacing:-0.4px}
+.brand .dot{width:8px;height:8px;border-radius:9999px;background:var(--lime);display:inline-block}
+.navlinks{display:flex;gap:28px;font-size:14px;font-weight:400}
+.navlinks a:hover{opacity:.6}
+.navright{display:flex;align-items:center;gap:16px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:9999px;
+  font-weight:500;font-size:14px;letter-spacing:-0.42px;
+  padding:9px 18px;border:1px solid var(--forest);
+  background:var(--forest);color:var(--parchment);
+  cursor:pointer;transition:opacity .2s;
+}
+.btn:hover{opacity:.85}
+.btn-ghost{background:transparent;color:var(--forest)}
+.btn-white{background:var(--parchment);color:var(--forest);border-color:var(--parchment)}
+.link-arrow{font-weight:400;font-size:16px;border-bottom:1px solid var(--forest);padding-bottom:1px}
+.link-arrow:hover{opacity:.6}
+
+/* hero */
+.hero{padding:64px 0 32px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.18px;
+  background:var(--stone);border-radius:9999px;padding:6px 14px;margin-bottom:24px;
+}
+h1{
+  font-size:48px;font-weight:300;line-height:1;letter-spacing:-1.44px;
+  margin-bottom:24px;
+}
+.hero p.lead{font-size:18px;line-height:1.3;letter-spacing:-0.36px;max-width:46ch;margin-bottom:32px;font-weight:350}
+.hero-cta{display:flex;align-items:center;gap:24px}
+.hero-img{border-radius:32px;overflow:hidden;aspect-ratio:4/5;background:var(--stone)}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px;border-top:1px solid var(--forest);padding-top:32px}
+.stat .num{font-size:40px;font-weight:300;letter-spacing:-1.2px;line-height:1.1}
+.stat .lbl{font-size:14px;font-weight:400;color:var(--forest);opacity:.7;margin-top:4px;letter-spacing:-0.42px}
+
+/* sections */
+section{padding:64px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:40px;gap:24px}
+h2{font-size:40px;font-weight:300;letter-spacing:-1.2px;line-height:1.1}
+.section-sub{font-size:16px;font-weight:350;max-width:52ch;opacity:.8;margin-top:16px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px}
+.gallery a{border-radius:16px;overflow:hidden;background:var(--stone)}
+.gallery a img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery a:hover img{transform:scale(1.05)}
+.g-tall{grid-row:span 2}
+.g-wide{grid-column:span 2}
+
+/* amenities — dark section */
+.dark{background:var(--forest);color:var(--parchment);border-radius:32px;margin:0 48px;padding:80px 0}
+.dark .wrap{padding:0 64px}
+.dark h2{color:var(--parchment)}
+.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.amen{
+  border:1px solid rgba(252,252,247,.25);
+  border-radius:16px;padding:24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.amen .code{font-family:var(--mono);font-size:12px;border:1px solid rgba(252,252,247,.5);border-radius:9999px;padding:4px 10px;align-self:flex-start;letter-spacing:.18px}
+.amen .t{font-size:20px;font-weight:400;letter-spacing:-0.3px}
+.amen .d{font-size:14px;opacity:.7;font-weight:350;line-height:1.5}
+.badge{display:inline-block;background:var(--lime);color:var(--forest);border-radius:9999px;font-size:12px;font-weight:500;padding:5px 12px;letter-spacing:-0.3px}
+
+/* feature two-col */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature.rev .feat-text{order:2}
+.feature img{border-radius:32px;aspect-ratio:5/4;object-fit:cover;width:100%}
+.feat-text h3{font-size:32px;font-weight:300;letter-spacing:-0.8px;margin-bottom:16px;line-height:1.2}
+.feat-text p{font-size:16px;font-weight:350;opacity:.85;margin-bottom:24px}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:12px}
+.checklist li{display:flex;gap:12px;font-size:16px;font-weight:400}
+.checklist li::before{content:"";width:8px;height:8px;border-radius:9999px;background:var(--lime);margin-top:8px;flex:none;outline:3px solid var(--stone)}
+
+/* rules */
+.rules-band{background:var(--stone);border-radius:32px;padding:64px}
+.rules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.rule{display:flex;gap:16px;background:var(--parchment);border:1px solid var(--forest);border-radius:16px;padding:20px 24px;align-items:center}
+.rule .ic{font-family:var(--mono);font-size:16px;font-weight:400;border:1px solid var(--forest);border-radius:9999px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:none}
+.rule .rt{font-size:16px;font-weight:400;letter-spacing:-0.4px}
+.rule .rs{font-size:13px;opacity:.65;font-weight:350}
+
+/* pricing / cta */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.price-card{background:var(--forest);color:var(--parchment);border-radius:32px;padding:48px}
+.price-card .deposit{font-family:var(--mono);font-size:12px;letter-spacing:.18px;border:1px solid rgba(252,252,247,.5);border-radius:9999px;padding:4px 10px;display:inline-block;margin-bottom:24px}
+.price-card h3{font-size:40px;font-weight:300;letter-spacing:-1.2px;margin-bottom:16px}
+.price-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.price-card li{display:flex;gap:12px;font-size:15px;font-weight:350;opacity:.9}
+.price-card li::before{content:"—";opacity:.6}
+.form{display:flex;flex-direction:column;gap:16px}
+.form label{font-size:14px;font-weight:500;letter-spacing:-0.42px}
+.form input,.form textarea,.form select{
+  width:100%;border:1px solid var(--forest);border-radius:8px;
+  background:var(--parchment);color:var(--forest);
+  font-family:var(--sans);font-size:16px;font-weight:400;
+  padding:12px 16px;letter-spacing:-0.4px;
+}
+.form input:focus,.form textarea:focus,.form select:focus{outline:2px solid var(--lime);outline-offset:1px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .btn{justify-content:center;padding:14px;font-size:16px}
+
+/* footer */
+footer{border-top:1px solid var(--forest);margin-top:64px;padding:64px 0 48px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.foot-grid p{font-size:15px;font-weight:350;opacity:.8;max-width:40ch;margin-top:16px}
+.foot-grid h4{font-size:14px;font-weight:500;margin-bottom:16px}
+.foot-grid a{display:block;font-size:15px;font-weight:350;opacity:.8;margin-bottom:8px}
+.foot-grid a:hover{opacity:1}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(28,58,19,.2);font-size:13px;opacity:.6;font-family:var(--mono);letter-spacing:.18px}
+
+@media(max-width:900px){
+  .wrap,.navwrap{padding-left:24px;padding-right:24px}
+  .hero-grid,.feature,.book,.foot-grid{grid-template-columns:1fr;gap:32px}
+  .feature.rev .feat-text{order:0}
+  h1{font-size:36px;letter-spacing:-1px}
+  h2{font-size:30px;letter-spacing:-.9px}
+  .stats,.gallery,.amen-grid,.rules-grid{grid-template-columns:1fr 1fr}
+  .stat .num{font-size:30px}
+  .dark{margin:0 24px;padding:48px 0}
+  .dark .wrap{padding:0 32px}
+  .rules-band{padding:32px}
+  .navlinks{display:none}
+  .g-tall,.g-wide{grid-row:auto;grid-column:auto}
+  .gallery{grid-auto-rows:160px}
+}
+@media(max-width:560px){
+  .stats,.gallery,.amen-grid,.rules-grid,.form-row{grid-template-columns:1fr}
+  .price-card{padding:32px}
+}
+</style>
+</head>
+<body>
+
+<div class="announce">Страховой депозит возвращается в день выезда · Бронирование открыто</div>
+
+<div class="navwrap">
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span>Дом&nbsp;под&nbsp;Луной</div>
+    <div class="navlinks">
+      <a href="#about">О доме</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#amenities">Оснащение</a>
+      <a href="#rules">Правила</a>
+    </div>
+    <div class="navright">
+      <a href="tel:+70000000000" class="btn-ghost" style="font-size:14px">+7 000 000-00-00</a>
+      <a href="#book" class="btn">Забронировать</a>
+    </div>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">126 м² · 2 этажа · до 10 гостей</span>
+        <h1>Уютный «Дом под&nbsp;Луной» для вашего отдыха</h1>
+        <p class="lead">Стильный и комфортабельный дом в тихом районе города, вдали от суеты центральных улиц. Личный островок тишины и вдохновения — для тех, кто ценит покой, оставаясь в черте городской инфраструктуры.</p>
+        <div class="hero-cta">
+          <a href="#book" class="btn">Забронировать сейчас</a>
+          <a href="#gallery" class="link-arrow">Смотреть галерею →</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Современный уютный дом">
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">126</div><div class="lbl">м² площади</div></div>
+      <div class="stat"><div class="num">10</div><div class="lbl">гостей днём</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">спальных мест</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">этажа + терраса</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="feature">
+      <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1000&q=80" alt="Кухня-гостиная">
+      <div class="feat-text">
+        <span class="badge">Сердце дома</span>
+        <h3 style="margin-top:16px">Кухня-гостиная с выходом на террасу</h3>
+        <p>Большая функциональная кухня-гостиная с обеденной зоной и выходом на террасу, где приятно выпить кофе с утра или насладиться ужином на свежем воздухе. Современный дизайн, мягкое освещение и продуманное зонирование.</p>
+        <ul class="checklist">
+          <li>Вся необходимая бытовая техника</li>
+          <li>Посуда на 10 человек</li>
+          <li>Обеденная зона с выходом на террасу</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Загляните внутрь</h2>
+        <div class="section-sub">Интерьер в современном стиле, придомовая территория и зона отдыха на свежем воздухе.</div>
+      </div>
+      <a href="#book" class="link-arrow">Забронировать →</a>
+    </div>
+    <div class="gallery">
+      <a class="g-tall" href="#"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Спальня"></a>
+      <a class="g-wide" href="#"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Гостиная"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80" alt="Ванная"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=700&q=80" alt="Интерьер"></a>
+      <a class="g-wide" href="#"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Спальня вторая"></a>
+      <a class="g-tall" href="#"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Терраса"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=700&q=80" alt="Обеденная зона"></a>
+      <a href="#"><img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=700&q=80" alt="Кухня"></a>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="dark">
+    <div class="wrap">
+      <span class="badge">Всё включено</span>
+      <h2 style="margin-top:24px">Оснащение и коммуникации</h2>
+      <div class="amen-grid">
+        <div class="amen"><span class="code">KT-01®</span><div class="t">Кухня под ключ</div><div class="d">Холодильник, газовая плита, микроволновая печь, вся посуда на 10 персон.</div></div>
+        <div class="amen"><span class="code">CL-02®</span><div class="t">Климат</div><div class="d">Кондиционеры и газовое отопление — комфортно в любое время года.</div></div>
+        <div class="amen"><span class="code">WF-03®</span><div class="t">Wi-Fi и ТВ</div><div class="d">Высокоскоростной интернет, телевизор и кабельное телевидение.</div></div>
+        <div class="amen"><span class="code">LN-04®</span><div class="t">Бытовое</div><div class="d">Стиральная машина, фен и утюг — всё для долгого комфортного пребывания.</div></div>
+        <div class="amen"><span class="code">HW-05®</span><div class="t">Коммуникации</div><div class="d">Электричество, горячая вода и центральная канализация без перебоев.</div></div>
+        <div class="amen"><span class="code">TR-06®</span><div class="t">Территория</div><div class="d">Придомовая зона с местом для отдыха на свежем воздухе и террасой.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature rev">
+      <div class="feat-text">
+        <span class="badge">Спокойный частный сектор</span>
+        <h3 style="margin-top:16px">Тишина в черте города</h3>
+        <p>Дом находится в спокойном частном секторе, вдали от суеты центральных улиц, но в шаговой доступности от городской инфраструктуры. Идеально для отдыха с друзьями, проведения праздников и корпоративов.</p>
+        <ul class="checklist">
+          <li>Тихий район вдали от шума</li>
+          <li>Подходит для компаний и праздников</li>
+          <li>Городская инфраструктура рядом</li>
+        </ul>
+      </div>
+      <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1000&q=80" alt="Дом в частном секторе">
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <div class="rules-band">
+      <div class="section-head" style="margin-bottom:0">
+        <div>
+          <h2>Правила проживания</h2>
+          <div class="section-sub">Перед заездом заключается договор. Полный расчёт — в день заезда.</div>
+        </div>
+      </div>
+      <div class="rules-grid">
+        <div class="rule"><div class="ic">15</div><div><div class="rt">Заезд после 15:00</div><div class="rs">Выезд до 12:00</div></div></div>
+        <div class="rule"><div class="ic">10</div><div><div class="rt">До 10 гостей днём</div><div class="rs">6 спальных мест</div></div></div>
+        <div class="rule"><div class="ic">22</div><div><div class="rt">Тишина после 22:00</div><div class="rs">Шуметь на участке можно до 22.00</div></div></div>
+        <div class="rule"><div class="ic">⌀</div><div><div class="rt">Курение только на улице</div><div class="rs">Кальян и сигареты строго на улице</div></div></div>
+        <div class="rule"><div class="ic">✕</div><div><div class="rt">Без питомцев</div><div class="rs">Размещение с животными невозможно</div></div></div>
+        <div class="rule"><div class="ic">≈</div><div><div class="rt">Сдаём дом как заселялись</div><div class="rs">Вывезенный мусор и чистая посуда</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="book">
+      <div class="price-card">
+        <span class="deposit">ДЕПОЗИТ · 5 000 ₽</span>
+        <h3>Условия бронирования</h3>
+        <p style="opacity:.85;font-weight:350">Страховой депозит за сохранность имущества возвращается в день выезда после уборки — при условии, что имуществу не нанесён ущерб и не нарушены правила проживания.</p>
+        <ul>
+          <li>Перед заездом заключается договор</li>
+          <li>Полный расчёт в день заезда</li>
+          <li>Депозит 5 000 ₽ — возвращается при выезде</li>
+          <li>Заезд после 15:00 · выезд до 12:00</li>
+        </ul>
+      </div>
+      <div>
+        <h2 style="margin-bottom:8px">Забронировать дом</h2>
+        <p style="opacity:.8;font-weight:350;margin-bottom:24px">Оставьте заявку — свяжемся с вами, подтвердим даты и расскажем детали.</p>
+        <form class="form" onsubmit="event.preventDefault();this.reset();document.getElementById('ok').style.display='block'">
+          <div>
+            <label for="name">Имя</label>
+            <input id="name" type="text" placeholder="Как к вам обращаться" required>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="phone">Телефон</label>
+              <input id="phone" type="tel" placeholder="+7 ___ ___-__-__" required>
+            </div>
+            <div>
+              <label for="guests">Гостей</label>
+              <select id="guests">
+                <option>1–4</option><option>5–7</option><option>8–10</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div><label for="in">Заезд</label><input id="in" type="date" required></div>
+            <div><label for="out">Выезд</label><input id="out" type="date" required></div>
+          </div>
+          <div>
+            <label for="msg">Комментарий</label>
+            <textarea id="msg" rows="3" placeholder="Повод, пожелания..."></textarea>
+          </div>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <div id="ok" style="display:none;font-size:14px;color:var(--forest);background:var(--lime);border-radius:8px;padding:12px 16px">Спасибо! Заявка принята — мы скоро свяжемся с вами.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand"><span class="dot"></span>Дом&nbsp;под&nbsp;Луной</div>
+        <p>Ваш личный островок тишины и вдохновения. Бронируйте прямо сейчас — и наслаждайтесь покоем в черте города.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <a href="#about">О доме</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#amenities">Оснащение</a>
+        <a href="#rules">Правила</a>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <a href="tel:+70000000000">+7 000 000-00-00</a>
+        <a href="#book">Забронировать</a>
+        <a href="#">Telegram · WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ДОМ ПОД ЛУНОЙ</span>
+      <span>126 М² · ДО 10 ГОСТЕЙ</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
