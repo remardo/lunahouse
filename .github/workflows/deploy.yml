@@ -13,4 +13,4 @@ jobs:
         run: |
           curl -fsSL -X GET \
             -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
-            "http://85.239.35.84:8000/api/v1/deploy?uuid=tdo6evfisfsp1fa5ugx67if8&force=false"
+            "https://coolify.sorokintech.ru/api/v1/deploy?uuid=tdo6evfisfsp1fa5ugx67if8&force=false"
